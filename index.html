@@ -18,41 +18,41 @@
             let compScore = 0;
 
             function playRound(playerSelection, computerSelection){
-                if(playerSelection == computerSelection){
+                if(playerSelection === computerSelection){
                     console.log("Draw");
                     winner = "draw";
-                }else if(playerSelection == "rock"){
-                    if(computerSelection == "paper"){
+                }else if(playerSelection === "rock"){
+                    if(computerSelection === "paper"){
                         console.log("Computer Wins! Paper beats Rock");
                         winner = "Computer";
-                    }else if(computerSelection == "scissors"){
+                    }else if(computerSelection === "scissors"){
                         console.log("Player Wins! Rock beats Scissors");
                         winner = "Player";
                     }
-                }else if(playerSelection == "paper"){
-                    if(computerSelection == "scissors"){
+                }else if(playerSelection === "paper"){
+                    if(computerSelection === "scissors"){
                         console.log("Computer Wins! Scissors beats Paper");
                         winner = "Computer";
-                    }else if(computerSelection == "rock"){
+                    }else if(computerSelection === "rock"){
                         console.log("Player Wins! Paper beats Rock");
                         winner = "Player";
                     }
-                }else if(playerSelection == "scissors"){
-                    if(computerSelection == "rock"){
+                }else if(playerSelection === "scissors"){
+                    if(computerSelection === "rock"){
                         console.log("Computer Wins! Rock beats Scissors")
                         winner = "Computer";
-                    }else if(computerSelection == "paper"){
+                    }else if(computerSelection === "paper"){
                         console.log("Player Wins! Scissors beats Paper");
                         winner = "Player";
                     }
                 }
-                if(winner == "Player"){
+                if(winner === "Player"){
                         playerScore++;
-                    }else if(winner == "Computer"){
+                    }else if(winner === "Computer"){
                         compScore++;
                     }
-                    
-                if(winner == "Player" || winner == "Computer"){
+
+                if(winner === "Player" || winner === "Computer"){
                 alert (winner + " has won this round!" + "\n" + 
                         "===============" + "\n" +
                         "= Computer: " + compScore + "     =" + "\n" +
@@ -91,7 +91,7 @@
                     alert("Player Wins!");
                 }else if(playerScore < compScore){
                     alert("Computer Wins");
-                }else if(playerScore == compScore){
+                }else if(playerScore === compScore){
                     alert("Its a tie!")
                 }
             }
