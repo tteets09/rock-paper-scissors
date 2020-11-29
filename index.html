@@ -14,6 +14,9 @@
                 return computerSelection;
             }
             let winner = "";
+            let playerScore = 0;
+            let compScore = 0;
+
             function playRound(playerSelection, computerSelection){
                 if(playerSelection == computerSelection){
                     console.log("Draw");
@@ -21,27 +24,46 @@
                 }else if(playerSelection == "rock"){
                     if(computerSelection == "paper"){
                         console.log("Computer Wins! Paper beats Rock");
-                        winner = "computer";
+                        winner = "Computer";
                     }else if(computerSelection == "scissors"){
                         console.log("Player Wins! Rock beats Scissors");
-                        winner = "player";
+                        winner = "Player";
                     }
                 }else if(playerSelection == "paper"){
                     if(computerSelection == "scissors"){
                         console.log("Computer Wins! Scissors beats Paper");
-                        winner = "computer";
+                        winner = "Computer";
                     }else if(computerSelection == "rock"){
                         console.log("Player Wins! Paper beats Rock");
-                        winner = "player";
+                        winner = "Player";
                     }
                 }else if(playerSelection == "scissors"){
                     if(computerSelection == "rock"){
                         console.log("Computer Wins! Rock beats Scissors")
-                        winner = "computer";
+                        winner = "Computer";
                     }else if(computerSelection == "paper"){
                         console.log("Player Wins! Scissors beats Paper");
-                        winner = "player";
+                        winner = "Player";
                     }
+                }
+                if(winner == "Player"){
+                        playerScore++;
+                    }else if(winner == "Computer"){
+                        compScore++;
+                    }
+                    
+                if(winner == "Player" || winner == "Computer"){
+                alert (winner + " has won this round!" + "\n" + 
+                        "===============" + "\n" +
+                        "= Computer: " + compScore + "     =" + "\n" +
+                        "= Player: " + playerScore + "             =" + "\n" +
+                        "===============");
+                }else if(winner == "draw"){
+                    alert ("It was a tie!" + "\n" + 
+                        "===============" + "\n" +
+                        "= Computer: " + compScore + "     =" + "\n" +
+                        "= Player: " + playerScore + "             =" + "\n" +
+                        "===============");
                 }
                 return winner;
             }
@@ -53,18 +75,11 @@
                 return answer;
             }
             function game(){
-                let playerScore = 0;
-                let compScore = 0;
 
                 for(var i = 0; i < 5; i++){
                     const playerSelection = playerInput();
                     const computerSelection = computerPlay();
                     playRound(playerSelection, computerSelection);
-                    if(winner == "player"){
-                        playerScore++;
-                    }else if(winner == "computer"){
-                        compScore++;
-                    }
 
                     console.log("===============");
                     console.log("= Computer:" + compScore + "  =");
