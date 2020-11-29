@@ -13,11 +13,12 @@
                 console.log(computerSelection);
                 return computerSelection;
             }
-            let winner = "";
             let playerScore = 0;
             let compScore = 0;
 
             function playRound(playerSelection, computerSelection){
+                let winner = "";
+                
                 if(playerSelection === computerSelection){
                     console.log("Draw");
                     winner = "draw";
